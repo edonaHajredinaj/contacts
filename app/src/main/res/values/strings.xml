@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Contacts</string>
+    <string name="contact_id">Contact ID</string>
+    <string name="number">Number</string>
+    <string name="birthday">Birthday</string>
+    <string name="search">Search</string>
+    <string name="save">Save</string>
+    <string name="email">Email</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="show_all">Show All</string>
+</resources>
