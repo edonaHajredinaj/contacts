@@ -46,9 +46,7 @@ public class MainActivity extends AppCompatActivity {
         String email = contactEmailTxt.getText().toString();
         String address = contactAddressTxt.getText().toString();
         String birthday = contactBirthdayTxt.getText().toString();
-        //db.execSQL("INSERT INTO contacts VALUES(1, 'Edona Hajredinaj', 38344555247, 'edona@gmail.com', 'Prishtine', '2000/03/27' ) "); // hard-coded
-        //db.execSQL("INSERT INTO contacts VALUES(" + id.toString() + ", '" + name + "', " + number.toString() + ", '" + email + "', '" + address + "', '" + birthday + "' ) "); // e merr prej edit text
-        //parameterized version >>>
+
         db.execSQL("INSERT INTO contacts VALUES(?, ?, ?, ?, ?, ? )", new Object[]{id, name, number, email, address, birthday});
 
         showMessage("", "Contact saved successfully.");
@@ -77,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         cursor.close();
-
     }
 
     public void saveChanges(View view) {
