@@ -9,4 +9,6 @@
     <string name="name">Name</string>
     <string name="address">Address</string>
     <string name="show_all">Show All</string>
+    <string name="previous">Previous</string>
+    <string name="delete">delete</string>
 </resources>

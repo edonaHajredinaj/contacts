@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <EditText
         android:id="@+id/contactIdBtn"
@@ -13,31 +10,31 @@
         android:layout_height="45dp"
         android:ems="10"
         android:hint="@string/contact_id"
+        android:importantForAutofill="yes"
         android:inputType="number"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.204"
-        android:importantForAutofill="yes"
+        app:layout_constraintVertical_bias="0.159"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/contactEmail"
+        android:id="@+id/contactName"
         android:layout_width="360dp"
         android:layout_height="45dp"
         android:ems="10"
-        android:hint="@string/email"
-        android:inputType="textWebEmailAddress"
+        android:hint="@string/name"
+        android:inputType="textPersonName"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.507"
+        app:layout_constraintVertical_bias="0.306"
         android:importantForAutofill="no" />
 
     <EditText
@@ -55,23 +52,23 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.406"
         android:autofillHints="(383)555-333"
-        android:importantForAutofill="yes" />
+        android:importantForAutofill="no" />
 
     <EditText
-        android:id="@+id/contactName"
+        android:id="@+id/contactEmail"
         android:layout_width="360dp"
         android:layout_height="45dp"
         android:ems="10"
-        android:hint="@string/name"
-        android:inputType="textPersonName"
+        android:hint="@string/email"
+        android:inputType="textWebEmailAddress"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.306"
-        android:autofillHints="Laura Novack" />
+        app:layout_constraintVertical_bias="0.507"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/contactAddress"
@@ -105,40 +102,11 @@
         app:layout_constraintVertical_bias="0.697"
         android:importantForAutofill="no" />
 
-    <EditText
-        android:id="@+id/searchContact"
-        android:layout_width="247dp"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:hint="@string/search"
-        android:inputType="textPersonName"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.165"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.052"
-        android:importantForAutofill="no" />
-
     <Button
-        android:id="@+id/searchBtn"
-        android:layout_width="97dp"
-        android:layout_height="44dp"
-        android:onClick="search"
-        android:text="@string/search"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.949"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.051" />
-
-    <Button
-        android:id="@+id/createBtn"
+        android:id="@+id/saveChangesBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="create"
+        android:onClick="saveChanges"
         android:text="@string/save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -147,15 +115,15 @@
         app:layout_constraintVertical_bias="0.81" />
 
     <Button
-        android:id="@+id/allContactsBtn"
-        android:layout_width="356dp"
-        android:layout_height="45dp"
-        android:onClick="allContacts"
-        android:text="@string/show_all"
+        android:id="@+id/previousToMainBtn"
+        android:layout_width="112dp"
+        android:layout_height="37dp"
+        android:onClick="previousPage"
+        android:text="@string/previous"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.971" />
