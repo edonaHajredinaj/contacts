@@ -28,15 +28,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         searchContactTxt = findViewById(R.id.searchContact);
+        reset();
+        db = openOrCreateDatabase("ContactsDB", MODE_PRIVATE, null);
+        db.execSQL("CREATE TABLE IF NOT EXISTS contacts(contact_id INTEGER PRIMARY KEY, contact_name TEXT, contact_number INTEGER, contact_email TEXT, contact_address TEXT, contact_birthday TEXT )");
+
+    }
+
+    public void reset() {
         contactIdTxt = findViewById(R.id.contactIdBtn);
         contactNameTxt = findViewById(R.id.contactName);
         contactNumberTxt = findViewById(R.id.contactNumber);
         contactEmailTxt = findViewById(R.id.contactEmail);
         contactAddressTxt = findViewById(R.id.contactAddress);
         contactBirthdayTxt = findViewById(R.id.contactBirthday);
-        db = openOrCreateDatabase("ContactsDB", MODE_PRIVATE, null);
-        db.execSQL("CREATE TABLE IF NOT EXISTS contacts(contact_id INTEGER PRIMARY KEY, contact_name TEXT, contact_number INTEGER, contact_email TEXT, contact_address TEXT, contact_birthday TEXT )");
-
     }
 
     public void create(View view) {
@@ -78,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void saveChanges(View view) {
-
+        reset();
         String id = contactIdTxt.getText().toString();
 
         String name = contactNameTxt.getText().toString();
@@ -87,13 +91,15 @@ public class MainActivity extends AppCompatActivity {
         String address = contactAddressTxt.getText().toString();
         String birthday = contactBirthdayTxt.getText().toString();
 
-        db.execSQL("UPDATE contacts SET contact_Name = ?, contact_number = ?, contact_Email = ?, contact_Address = ?, contact_Birthday = ? WHERE contact_id = ?",
+        db.execSQL("UPDATE contacts SET contact_Name = ?, contact_number = ?, contact_Email = ?, " +
+                        "contact_Address = ?, contact_Birthday = ? WHERE contact_id = ?",
                 new Object[]{name, number, email, address, birthday, id});
 
         showMessage("", "Changes saved successfully.");
     }
 
     public void delete(View view) {
+        reset();
         String id = contactIdTxt.getText().toString();
         db.execSQL("DELETE FROM contacts WHERE contact_id = ?", new Object[]{id});
 
