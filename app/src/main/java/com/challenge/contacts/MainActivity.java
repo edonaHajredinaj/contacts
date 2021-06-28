@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -53,7 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
         db.execSQL("INSERT INTO contacts VALUES(?, ?, ?, ?, ?, ? )", new Object[]{id, name, number, email, address, birthday});
 
-        showMessage("", "Contact saved successfully.");
+        Toast.makeText(this, "Contact saved successfully.", Toast.LENGTH_SHORT).show();
+
     }
 
     public void search(View view) {
@@ -75,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         if (cursor.moveToFirst()) {
             showMessage("Contacts found: ", builder.toString());
         } else {
-            showMessage("No contacts found.", null);
+            Toast.makeText(this, "No contacts found.", Toast.LENGTH_SHORT).show();
         }
 
         cursor.close();
@@ -103,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         String id = contactIdTxt.getText().toString();
         db.execSQL("DELETE FROM contacts WHERE contact_id = ?", new Object[]{id});
 
-        showMessage("", "Contact deleted.");
+        Toast.makeText(this, "Contact deleted.", Toast.LENGTH_SHORT).show();
     }
 
     public void previousPage(View view) {
